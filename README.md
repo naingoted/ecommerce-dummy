@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## todos
 
-## Getting Started
+### priority in order
 
-First, run the development server:
+- [x] filters
+  - [x] categories
+  - [x] rating
+  - [x] price range
+  - [x] dynamic price range filter + star rating ( need to get from products query)
+  - [ ] What happens if filterProductsByPriceRange is called with only one number in the second param priceRange array
+  - [ ] filter-reset
+  - [ ] loading state for priceRang filter
+- [x] product listing + detail page info display
+- [x] checkout + - items features
+- [ ] clean up import `React.` and standardised naming/import in components
+  - [ ] split up filters into seperate folder, remove and use component, input component in price range
+- [x ]unit testing ( timebox )
+  - [x] cart components
+  - [x] product list
+  - [ ] filter
+- [ ] mobile + ui ( timebox )
+- [ ] payment gateway
+- [ ] need to set up CICD to deploy on vercel on push + tools ( precommit, eslint, coding standard ) for better maintainence ( timebox on tools)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [ ] api caching and optimisation ( timebox )
+- [ ] animation + clean up CSS classes
+- [ ] cart Page - integrate loading state
+- [ ] pagination
+- [ ] All components, layout and templates to be developed from scratch, not
+      allowed to use any off the shelf templates or packages - need to rewrite some ui components ( select dropdown ) if time permits. ( timebox )
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Testing

@@ -12,15 +12,18 @@ const Loading = () => {
               <Skeleton className="rounded-xl aspect-square" />
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <Skeleton className="aspect-square rounded-xl" />
-            <Skeleton className="aspect-square rounded-xl" />
-            <Skeleton className="aspect-square rounded-xl" />
+          <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <Skeleton key={i} className="aspect-square rounded-xl" />
+              ))}
+            </div>
+            <div></div>
           </div>
         </div>
       </div>
     </Container>
   );
-}
- 
+};
+
 export default Loading;
