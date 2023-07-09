@@ -14,7 +14,8 @@ interface Query {
 }
 
 const getUrl = (category?: string) => {
-  let URL = `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`;
+  let URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/products`;
+  // let LOCAL_URL = `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/v1/products`;
   if (category && category !== "all") {
     URL = URL + `/category/${category}`;
   }

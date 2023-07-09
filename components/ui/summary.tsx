@@ -29,7 +29,7 @@ const Summary = () => {
   }, 0);
 
   const onCheckout = async () => {
-    // const response = await axios.post(`${process.env.NEXT_PUBLIC_VERCEL_URL}/checkout`, {
+    // const response = await axios.post(`checkout`, {
     //   productIds: items.map((item) => item.id)
     // });
     // window.location = response.data.url;
