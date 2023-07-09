@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import mockRouter from "next-router-mock";
 import StarRating from "@/components/ui/star-rating";
 
 describe("StarRating", () => {

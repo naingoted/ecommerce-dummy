@@ -105,12 +105,14 @@ describe("#filterProductsByPriceRange", () => {
   it("returns products at the lower bound of the price range", () => {
     expect(filterProductsByPriceRange(products, [200, 300])).toEqual([
       { id: 2, price: 200 },
+      { id: 3, price: 300 },
     ]);
   });
 
   it("excludes products at the upper bound of the price range", () => {
     expect(filterProductsByPriceRange(products, [100, 200])).toEqual([
       { id: 1, price: 100 },
+      { id: 2, price: 200 },
     ]);
   });
 });

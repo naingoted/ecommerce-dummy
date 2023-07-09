@@ -24,10 +24,15 @@ describe("CartPage", () => {
 
     await user.click(screen.getAllByTestId("cart-remove-all")[0]);
 
-    const orderSummaryElement = screen.getByTestId("order-summary");
-
     // totalPrice is 549+(899*3) - first item (549)
     expect(screen.getByTestId("order-summary")).toHaveTextContent("$2,697.00");
+  });
+
+  test("removes first cart item if the quantity is zero", async () => {
+    const user = userEvent.setup();
+
+    await user.click(screen.getAllByTestId("cart-decrease")[0]);
+    expect(screen.getAllByTestId("cart-item")).toHaveLength(1);
   });
 
   test("updates summary and quantity when adding or removing quantity", async () => {

@@ -48,7 +48,7 @@ export function filterProductsByPriceRange(
   if (Array.isArray(priceRange)) {
     return products.filter(
       (product) =>
-        product.price >= priceRange[0] && product.price < priceRange[1]
+        product.price >= priceRange[0] && product.price <= priceRange[1]
     );
   }
   return products;

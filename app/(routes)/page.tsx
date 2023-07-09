@@ -1,10 +1,8 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import Container from "@/components/ui/container";
-import NoResults from "@/components/ui/no-results";
-import ProductCard from "@/components/ui/product-card";
 import ProductList from "@/components/ui/product-list";
-import ProductsFilter from "@/components/ui/products-filter";
+import ProductsFilter from "@/components/ui/products-filter/index";
 import { getProductsPriceRange } from "@/lib/utils";
 
 const HomePage = async ({
@@ -15,6 +13,7 @@ const HomePage = async ({
   const products = await getProducts({ limit: 50, skip: 0, ...searchParams });
   const categories = await getCategories();
   const priceRange = getProductsPriceRange(products);
+
   return (
     <Container>
       <div className="space-y-10 pb-10">
