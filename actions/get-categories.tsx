@@ -1,14 +1,13 @@
-const URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/categories`;
+const URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/categories`;
 
 const getCategories = async (): Promise<string[]> => {
-  const res = await fetch(URL);
+  try {
+    const res = await fetch(URL);
+    const categories = await res.json();
 
-  const categories = await res.json();
-
-  if (res.ok) {
     return categories;
-  } else {
-    throw new Error("products api failed");
+  } catch (error) {
+    return [];
   }
 };
 

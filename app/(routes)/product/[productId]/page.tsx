@@ -2,8 +2,7 @@ import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 import getProduct from "@/actions/get-product";
 import Container from "@/components/ui/container";
-
-export const revalidate = 0;
+import NotFound from "@/components/ui/not-found";
 
 interface ProductPageProps {
   params: {
@@ -14,8 +13,8 @@ interface ProductPageProps {
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
   const product = await getProduct(params.productId);
 
-  if (!product) {
-    return null;
+  if (!product || product?.message) {
+    return <NotFound />;
   }
 
   return (

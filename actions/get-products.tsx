@@ -14,7 +14,7 @@ interface Query {
 }
 
 const getUrl = (category?: string) => {
-  let URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`;
+  let URL = `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products`;
   if (category && category !== "all") {
     URL = URL + `/category/${category}`;
   }
@@ -44,7 +44,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
 
     return filtered;
   } else {
-    throw new Error("products api failed");
+    return [];
   }
 };
 
