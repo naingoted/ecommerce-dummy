@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Currency from "@/components/ui/currency";
+import Link from "next/link";
 import { Product } from "@/types";
 import StarRating from "./star-rating";
 
@@ -11,17 +11,13 @@ interface ProductCard {
 }
 
 const ProductCard: React.FC<ProductCard> = ({ data }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/product/${data?.id}`);
-  };
-
   return (
-    <div
-      onClick={handleClick}
+    <Link
+      href={`/product/${data?.id}`}
       className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
       data-testid="product-card"
+      role="link"
+      aria-label="product-card"
     >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
@@ -43,7 +39,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
           {`${data?.discountPercentage}% off`}
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

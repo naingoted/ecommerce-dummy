@@ -62,7 +62,7 @@ const ProductsFilter: FC<FilterProps> = ({ categories, priceRange }) => {
   const handleStarsChange = (stars: number) => {
     handleQueryChange({ stars });
   };
-  console.log("helo");
+
   return (
     <div className="flex gap-4 mt-4 flex-col md:flex-row px-4 sm:px-6 lg:px-8">
       <CategoryFilter
