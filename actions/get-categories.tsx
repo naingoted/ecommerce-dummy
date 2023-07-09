@@ -1,4 +1,4 @@
-const URL = `${process.env.API_URL}/api/products/categories`;
+const URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/products/categories`;
 
 const getCategories = async (): Promise<string[]> => {
   const res = await fetch(URL);

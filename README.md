@@ -32,4 +32,4 @@
 
 ## Setup
 
-- create `.env` file with `NEXT_PUBLIC_API_URL=http://localhost:3000` assuming you're using port 3000
+- create `.env` file with `NEXT_PUBLIC_NEXT_PUBLIC_VERCEL_URL=http://localhost:3000` assuming you're using port 3000
