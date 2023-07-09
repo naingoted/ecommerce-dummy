@@ -30,4 +30,6 @@
 - [x] All components, layout and templates to be developed from scratch, not
       allowed to use any off the shelf templates or packages - need to rewrite some ui components ( select dropdown ) if time permits. ( timebox )
 
-## Testing
+## Setup
+
+- create `.env` file with `NEXT_PUBLIC_API_URL=http://localhost:3000` assuming you're using port 3000

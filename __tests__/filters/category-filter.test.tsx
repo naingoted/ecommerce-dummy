@@ -1,4 +1,4 @@
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CategoryFilter from "@/components/ui/products-filter/category-filter";
 
@@ -13,15 +13,23 @@ describe("CategoryFilter", () => {
       />
     );
 
-    const categoryFilter = screen.getByTestId("category-select");
-    const selectButton = within(categoryFilter).getByRole("button");
+    const selectButton = screen.getByRole("combobox");
     userEvent.click(selectButton);
 
-    await waitFor(() =>
-      expect(screen.queryByText("Books")).toBeInTheDocument()
-    );
+    await waitFor(() => {
+      // should open dropdown
+      expect(screen.getAllByRole("option")[0]).toBeInTheDocument();
+      // should see the option in the dropdown
+      expect(screen.queryByText("Books")).toBeInTheDocument();
+    });
 
     const booksOption = screen.getByText("Books");
-    userEvent.click(booksOption);
+    await userEvent.click(booksOption);
+    // should close the dropdown
+    expect(screen.queryByRole("option")).not.toBeInTheDocument();
+    // should call onChange after the option is clicked
+    await waitFor(() => {
+      expect(mockOnChange).toHaveBeenCalledWith("Books");
+    });
   });
 });

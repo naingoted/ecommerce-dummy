@@ -27,10 +27,10 @@ const CategoryFilter: FC<{
   };
 
   return (
-    <div>
+    <div className="max-w-[360px] md:max-w-[200px] mx-auto w-full">
       <label
         htmlFor="category"
-        className="block text-sm font-medium text-gray-700"
+        className="block text-md font-bold text-gray-700"
       >
         Category
       </label>

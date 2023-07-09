@@ -19,11 +19,8 @@ const RatingFilter: FC<{
   };
 
   return (
-    <div>
-      <label
-        htmlFor="rating"
-        className="block text-sm font-medium text-gray-700"
-      >
+    <div className="max-w-[360px] w-full mx-auto md:max-w-none md:mx-0">
+      <label htmlFor="rating" className="block text-md font-bold text-gray-700">
         Rating
       </label>
       <div

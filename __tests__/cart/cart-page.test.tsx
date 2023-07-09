@@ -22,7 +22,9 @@ describe("CartPage", () => {
   test("updates summary when removing first cart item", async () => {
     const user = userEvent.setup();
 
-    await user.click(screen.getAllByTestId("cart-remove-all")[0]);
+    await user.click(
+      screen.getAllByRole("button", { name: "remove-all-btn" })[0]
+    );
 
     // totalPrice is 549+(899*3) - first item (549)
     expect(screen.getByTestId("order-summary")).toHaveTextContent("$2,697.00");

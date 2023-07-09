@@ -26,7 +26,8 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           src={data?.thumbnail}
-          alt=""
+          alt={data?.title}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill
           className="aspect-square object-cover rounded-md"
         />

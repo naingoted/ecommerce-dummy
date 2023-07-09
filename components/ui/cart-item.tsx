@@ -40,6 +40,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
           <IconButton
             onClick={onRemove}
             icon={<X size={15} />}
+            name="remove-all-btn"
             data-testid={"cart-remove-all"}
           />
         </div>

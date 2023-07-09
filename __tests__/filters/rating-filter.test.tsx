@@ -5,7 +5,7 @@ import RatingFilter from "@/components/ui/products-filter/rating-filter";
 describe("RatingFilter", () => {
   it("renders with default value and options", () => {
     render(<RatingFilter value={3} onChange={jest.fn()} />);
-    const starButtons = screen.getAllByTestId(/^rating-\d+$/);
+    const starButtons = screen.getAllByRole("radio");
     expect(starButtons).toHaveLength(5);
 
     expect(starButtons[2]).toHaveAttribute("aria-checked", "true");
@@ -15,7 +15,7 @@ describe("RatingFilter", () => {
     const mockOnChange = jest.fn();
     render(<RatingFilter value={3} onChange={mockOnChange} />);
 
-    const starButtons = screen.getAllByTestId(/^rating-\d+$/);
+    const starButtons = screen.getAllByRole("radio");
     await userEvent.click(starButtons[1]);
     expect(mockOnChange).toHaveBeenCalledWith(2);
 

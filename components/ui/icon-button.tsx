@@ -12,11 +12,14 @@ const IconButton: React.FC<IconButtonProps> = ({
   onClick,
   icon,
   className,
+  name,
   ...props
 }) => {
   return (
     <button
       onClick={onClick}
+      role="button"
+      aria-label={name}
       className={cn(
         "rounded-full flex items-center justify-center bg-white border shadow-md p-2 hover:scale-110 transition",
         className

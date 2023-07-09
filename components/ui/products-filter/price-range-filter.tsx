@@ -11,8 +11,6 @@ const PriceRangeFilter: FC<PriceRangeFilterProps> = ({ value, onChange }) => {
   const [localValue, setLocalValue] = useState(value);
 
   const debouncedPrice = useDebounce(localValue);
-  console.log("1", value);
-  console.log("local", localValue);
 
   useEffect(() => {
     setLocalValue(value);
@@ -37,7 +35,7 @@ const PriceRangeFilter: FC<PriceRangeFilterProps> = ({ value, onChange }) => {
   }, [debouncedPrice, onChange]);
 
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-col md:flex-row gap-4 md:min-w-[360px]">
       <Input
         type="number"
         id="priceMin"
