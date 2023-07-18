@@ -53,3 +53,13 @@ export function filterProductsByPriceRange(
   }
   return products;
 }
+
+export function getUrlbyEnv(url: string | undefined) {
+  if (!url) {
+    return "";
+  }
+  if (process.env.NODE_ENV === 'development') {
+    return `http://${url}`
+  }
+  return `https://${url}`
+}
