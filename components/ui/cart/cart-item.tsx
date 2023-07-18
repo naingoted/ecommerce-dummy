@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { toast } from "react-hot-toast";
 import { X, Plus, Minus } from "lucide-react";
 
 import IconButton from "@/components/ui/icon-button";

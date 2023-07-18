@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 
 import { stripe } from '@/lib/stripe';
 import { CartProduct } from '@/types';
+import { getUrlbyEnv } from '@/lib/utils';
 
 const corsHeaders = {
 	'Access-Control-Allow-Origin': '*',
@@ -33,7 +34,8 @@ export async function POST(req: Request) {
 			},
 		});
 	});
-	console.log('line items ', line_items);
+
+	const appUrl = getUrlbyEnv(process.env.NEXT_PUBLIC_VERCEL_URL);
 	const session = await stripe.checkout.sessions.create({
 		line_items,
 		mode: 'payment',
@@ -41,14 +43,12 @@ export async function POST(req: Request) {
 		phone_number_collection: {
 			enabled: true,
 		},
-		success_url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/cart?success=1`,
-		cancel_url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/cart?canceled=1`,
+		success_url: `${appUrl}/cart?success=1`,
+		cancel_url: `${appUrl}/cart?canceled=1`,
 		metadata: {
 			orderId: 1,
 		},
 	});
-
-	console.log('hello', session);
 
 	return NextResponse.json(
 		{ url: session.url },

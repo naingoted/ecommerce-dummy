@@ -1,6 +1,6 @@
 'use client';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, FC } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 import Button from '@/components/ui/button';
@@ -8,13 +8,12 @@ import Currency from '@/components/ui/currency';
 import useCart from '@/hooks/use-cart';
 import { toast } from 'react-hot-toast';
 
-const Summary = () => {
+const Summary: FC = () => {
 	const searchParams = useSearchParams();
 	const items = useCart((state) => state.items);
 	const emptyCart = useCart((state) => state.emptyCart);
 
 	useEffect(() => {
-		console.log('asdfasd', searchParams);
 		if (searchParams.get('success')) {
 			toast.success('Payment completed.');
 			emptyCart();
