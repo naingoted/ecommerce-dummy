@@ -2,11 +2,11 @@
 
 ### local dev
 
-- create `.env.local` file with `NEXT_PUBLIC_VERCEL_URL=dummyjson.com`
+- create `.env.local` file with `NEXT_PUBLIC_VERCEL_URL=localhost:3000`,  `STRIPE_API_KEY=${you key}`, `NEXT_PUBLIC_DUMMYJSON_URL=dummyjson.com`
 
-### prod
+### prod in vercel
 
-- create `.env.production` or `.env` file with `NEXT_PUBLIC_VERCEL_URL=dummyjson.com`
+- add env variables `NEXT_PUBLIC_DUMMYJSON_URL=dummyjson.com` and `STRIPE_API_KEY=${you key}`
 
 ## notes
 
