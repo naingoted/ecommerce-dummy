@@ -4,7 +4,9 @@ const URL = `https://${process.env.NEXT_PUBLIC_DUMMYJSON_URL}/products`;
 
 const getProduct = async (id: number): Promise<Product | null> => {
 	try {
-		const res = await fetch(`${URL}/${id}`);
+		const res = await fetch(`${URL}/${id}`, {
+			next: { tags: [`product-${id}`, `product`] },
+		});
 
 		const product = res.json();
 		return product;

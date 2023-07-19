@@ -5,8 +5,6 @@ import ProductList from "@/components/ui/product-list";
 import ProductsFilter from "@/components/ui/products-filter/index";
 import { getProductsPriceRange } from "@/lib/utils";
 
-export const revalidate = 0;
-
 const HomePage = async ({
   searchParams,
 }: {
