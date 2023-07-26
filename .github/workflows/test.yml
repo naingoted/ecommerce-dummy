@@ -1,4 +1,3 @@
-yaml
 name: Ecommerce Dummy NodeJS CI
 on:
   push:
