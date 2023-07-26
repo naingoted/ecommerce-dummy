@@ -2,7 +2,9 @@ const URL = `https://${process.env.NEXT_PUBLIC_DUMMYJSON_URL}/products/categorie
 
 const getCategories = async (): Promise<string[]> => {
 	try {
-		const res = await fetch(URL);
+		const res = await fetch(URL, {
+			next: { tags: [`categories`] },
+		});
 		const categories = await res.json();
 
 		return categories;

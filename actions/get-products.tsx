@@ -29,7 +29,16 @@ const getProducts = async (query: Query): Promise<Product[]> => {
 			skip: query.skip,
 		},
 	});
-	const res = await fetch(url);
+
+	const queryCacheKey = `products-${
+		typeof query.category === 'undefined' ? 'all' : query.category
+	}-${query.limit}-${query.skip}`;
+
+	const res = await fetch(url, {
+		next: {
+			tags: [queryCacheKey, `products`],
+		},
+	});
 
 	const { products } = await res.json();
 	if (res.ok) {

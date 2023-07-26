@@ -8,8 +8,6 @@ import useCart from '@/hooks/use-cart';
 import Summary from '@/components/ui/cart/summary';
 import CartItem from '@/components/ui/cart/cart-item';
 
-export const revalidate = 0;
-
 const CartPage = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const cart = useCart();
