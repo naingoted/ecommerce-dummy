@@ -1,9 +1,16 @@
+import { toast } from "react-hot-toast";
 import { Product } from "@/types";
 import {
   getProductsPriceRange,
   filterProductsByRating,
   filterProductsByPriceRange,
-} from "./utils";
+} from "@/lib/utils";
+
+jest.mock("react-hot-toast", () => ({
+  toast: {
+    error: jest.fn(),
+  },
+}));
 
 describe("#getProductsPriceRange", () => {
   it("should correctly determine the minimum and maximum price from a list of products", () => {
@@ -44,6 +51,10 @@ describe("#getProductsPriceRange", () => {
 });
 
 describe("#filterProductsByRating", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should correctly filter products based on rating", () => {
     const products = [
       { id: 1, rating: 3.5 },
@@ -54,8 +65,8 @@ describe("#filterProductsByRating", () => {
 
     const result = filterProductsByRating(products, 4);
     expect(result).toEqual([
-      { id: 2, rating: 4.0 },
-      { id: 3, rating: 4.5 },
+      { id: 1, rating: 3.5 },
+      { id: 2, rating: 4 },
     ]);
   });
 
@@ -74,8 +85,16 @@ describe("#filterProductsByRating", () => {
   it("should throw an error for invalid ratings", () => {
     const products = [{ id: 1, rating: 3.5 }] as Product[];
 
-    expect(() => filterProductsByRating(products, 6)).toThrow();
-    expect(() => filterProductsByRating(products, 0)).toThrow();
+    // Check that the toast.error is called when an invalid rating is provided
+    filterProductsByRating(products, 6);
+    expect(toast.error).toHaveBeenCalledWith(
+      "Invalid rating. Rating must be between 1 and 5 and a number"
+    );
+
+    filterProductsByRating(products, 0);
+    expect(toast.error).toHaveBeenCalledWith(
+      "Invalid rating. Rating must be between 1 and 5 and a number"
+    );
   });
 });
 

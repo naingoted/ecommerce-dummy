@@ -1,6 +1,6 @@
 import { Urbanist } from 'next/font/google'
 
-import ToastProvider from '@/providers/toast-provider'
+import ToastProvider from '@/components/providers/toast-provider'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 

@@ -1,8 +1,8 @@
 import getCategories from "@/actions/get-categories";
 import getProducts from "@/actions/get-products";
 import Container from "@/components/ui/container";
-import ProductList from "@/components/ui/product-list";
-import ProductsFilter from "@/components/ui/products-filter/index";
+import ProductList from "@/components/ui/product/product-list";
+import ProductsFilter from "@/components/ui/product-filter/index";
 import { getProductsPriceRange } from "@/lib/utils";
 
 const HomePage = async ({

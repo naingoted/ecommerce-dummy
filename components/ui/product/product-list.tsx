@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import NoResults from "./no-results";
+import NoResults from "@/components/ui/no-results";
 import { Product } from "@/types";
 import ProductCard from "./product-card";
 

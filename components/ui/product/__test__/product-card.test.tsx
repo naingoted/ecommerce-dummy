@@ -1,9 +1,9 @@
-import ProductList from "@/components/ui/product-list";
+// import ProductList from "@/components/ui/product/product-list";
 import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { productsData } from "../../test-mocks/data";
+// import userEvent from "@testing-library/user-event";
+import { productsData } from "@/test-mocks/data";
 import mockRouter from "next-router-mock";
-import ProductCard from "@/components/ui/product-card";
+import ProductCard from "@/components/ui/product/product-card";
 
 describe("ProductCard", () => {
   beforeEach(() => {
