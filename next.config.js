@@ -8,7 +8,7 @@ const nextConfig = {
 	async rewrites() {
 		return [
 			{
-				source: '/api/products/:path*',
+				source: '/api/v1/products/:path*',
 				destination: 'https://dummyjson.com/products/:path*',
 			},
 		];
