@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import StarRating from "@/components/ui/star-rating";
+import StarRating from "@/components/ui/product/star-rating";
 
 describe("StarRating", () => {
   it("renders 4 and a half star", async () => {

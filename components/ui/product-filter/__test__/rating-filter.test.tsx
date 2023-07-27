@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import RatingFilter from "@/components/ui/products-filter/rating-filter";
+import RatingFilter from "@/components/ui/product-filter/rating-filter";
 
 describe("RatingFilter", () => {
   it("renders with default value and options", () => {

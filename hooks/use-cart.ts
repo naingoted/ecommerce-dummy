@@ -4,7 +4,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 
 import { Product, CartProduct } from "@/types";
 
-interface CartStore {
+export interface CartStore {
   items: CartProduct[];
   addItem: (data: Product) => void;
   removeItem: (id: number) => void;

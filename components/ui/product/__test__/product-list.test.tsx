@@ -1,7 +1,7 @@
-import ProductList from "@/components/ui/product-list";
+import ProductList from "@/components/ui/product/product-list";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { productsData } from "../../test-mocks/data";
+import { productsData } from "@/test-mocks/data";
 import mockRouter from "next-router-mock";
 
 describe("ProductList", () => {

@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import CategoryFilter from "@/components/ui/products-filter/category-filter";
+import CategoryFilter from "@/components/ui/product-filter/category-filter";
 
 describe("CategoryFilter", () => {
   it("calls onChange handler with new value when an option is selected", async () => {

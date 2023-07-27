@@ -37,8 +37,8 @@
   - [x] filter
 - [x] mobile + ui ( timebox )
 - [x] Image component best practice fix
-- [ ] payment gateway
-- [ ] need to set up CICD to deploy on vercel on push + tools ( test, precommit checks, coding standard ) for better maintainence ( timebox on tools)
+- [x] payment gateway
+- [x] need to set up CICD to deploy on vercel on push + tools ( test, precommit checks, coding standard ) for better maintainence ( timebox on tools)
 - [ ] animation + clean up CSS classes
 - [ ] cart Page - integrate loading state
 - [ ] browser compatitablity test

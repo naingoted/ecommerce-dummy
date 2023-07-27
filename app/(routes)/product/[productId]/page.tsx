@@ -1,4 +1,4 @@
-import Gallery from "@/components/gallery";
+import Gallery from "@/components/ui/gallery";
 import Info from "@/components/info";
 import getProduct from "@/actions/get-product";
 import Container from "@/components/ui/container";

@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import PriceRangeFilter from "@/components/ui/products-filter/price-range-filter";
+import PriceRangeFilter from "@/components/ui/product-filter/price-range-filter";
 
 describe("PriceRangeFilter", () => {
   it("renders with default values", () => {
