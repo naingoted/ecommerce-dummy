@@ -29,15 +29,15 @@ const getProducts = async (query: Query): Promise<Product[]> => {
 			skip: query.skip,
 		},
 	});
-
+	// cache key wasn't refreshed on prod mode
 	const queryCacheKey = `products-${
 		typeof query.category === 'undefined' ? 'all' : query.category
 	}-${query.limit}-${query.skip}`;
-
 	const res = await fetch(url, {
-		next: {
-			tags: [queryCacheKey, `products`],
-		},
+		// next: {
+		// 	tags: [queryCacheKey, `products`],
+		// },
+		cache: 'no-store' 
 	});
 
 	const { products } = await res.json();
