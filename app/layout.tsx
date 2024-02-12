@@ -1,31 +1,31 @@
-import { Urbanist } from 'next/font/google'
+import { Urbanist } from "next/font/google";
 
-import ToastProvider from '@/components/providers/toast-provider'
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
+import { Toaster } from "react-hot-toast";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-import './globals.css'
+import "./globals.css";
 
-const font = Urbanist({ subsets: ['latin'] })
+const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Store',
-  description: 'Store - The place for all your purchases.',
-}
+  title: "Store",
+  description: "Store - The place for all your purchases.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToastProvider />
         <Navbar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
-  )
+  );
 }
